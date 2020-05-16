@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarks API</title>
+</head>
+<body>
+    <h1>Bookmarks API</h1>
+    <h2>Add Bookmark</h2>
+    <form class="form-add-bookmark">
+        <label for="bookmarkTitle">
+            Title :
+        </label>
+        <input type="text"  id="bookmarkTitle">
+        <label for="bookmarkUrl">
+            Url :
+        </label>
+        <input type="text"  id="bookmarkUrl">
+        <label for="bookmarkDescription">
+            Description :
+        </label>
+        <input type="text"  id="bookmarkDescription">
+        <label for="bookmarkRating">
+            Rating :
+        </label>
+        <input type="text"  id="bookmarkRating">
+        <button type="submit">Add Bookmark</button>
+    </form>
+    <h2>Delete Bookmark</h2>
+    <form class="form-delete-bookmark">
+        <label for="bookmarkId">
+            ID :
+        </label>
+        <input type="text"  id="bookmarkId">
+        <button type="submit">Delete Bookmark</button>
+    </form>
+    <h2>Update Bookmark</h2>
+    <form class="form-patch-bookmark">
+        <label for="bookmarkIdPatch">
+            Id :
+        </label>
+        <input type="text"  id="bookmarkIdPatch">
+        <label for="bookmarkTitlePatch">
+            Title :
+        </label>
+        <input type="text"  id="bookmarkTitlePatch">
+        <label for="bookmarkUrlPatch">
+            Url :
+        </label>
+        <input type="text"  id="bookmarkUrlPatch">
+        <label for="bookmarkDescriptionPatch">
+            Description :
+        </label>
+        <input type="text"  id="bookmarkDescriptionPatch">
+        <label for="bookmarkRatingPatch">
+            Rating :
+        </label>
+        <input type="text"  id="bookmarkRatingPatch">
+        <button type="submit">Update Bookmark</button>
+    </form>
+    <h2>Get Bookmark</h2>
+    <form class="form-get-bookmark">
+        <label for="bookmarkTitleGet">
+            Title :
+        </label>
+        <input type="text"  id="bookmarkTitleGet">
+        <button type="submit">Get Bookmark</button>
+    </form>
+    <table class="table-auto mt-3 w-full">
+        <thead>
+          <tr>
+            <th class="px-4 py-2 text-left">Id</th>
+            <th class="px-4 py-2 text-left">Title</th>
+            <th class="px-4 py-2 text-left">Url</th>
+            <th class="px-4 py-2 text-left">Description</th>
+            <th class="px-4 py-2 text-left">Rating</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody" class="table-strips">
+        </tbody>
+    </table>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

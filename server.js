@@ -7,9 +7,11 @@ const API_KEY = '2abbf7c3-245b-404f-9473-ade729ed4653'
 const jsonParser = bodyParser.json();
 const mongoose = require('mongoose')
 const { Bookmark } = require('./models/bookmarkModel')
+const {DATABASE_URL, PORT} = require( './config' );
 
 app.use(jsonParser);
 app.use( morgan('dev'))
+app.use(express.static('public'))
 
 const api = (req, res, next) => {
 
@@ -188,7 +190,7 @@ app.patch('/bookmark/:id', (req, res) => {
         });
 })
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
     console.log("The server is running!")
 
     new Promise((resolve, reject) => {
@@ -197,7 +199,7 @@ app.listen(8000, () => {
             useUnifiedTopology: true,
             useCreateIndex: true,
         };
-        mongoose.connect('mongodb://localhost/bookmarksdb', settings,(err) => {
+        mongoose.connect(DATABASE_URL, settings,(err) => {
             if(err) {
                 return eject(err);
             }
